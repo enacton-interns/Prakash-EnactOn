@@ -1,0 +1,502 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    /* Theme Tokens — Exact Match from uupm.cc Educational Platform Image */
+    --bg-cream: #F9F3EA;
+    /* Exact Warm Paper Off-White Background */
+    --bg-card: #FFFFFF;
+    /* Solid White Floating Cards */
+    --text: #1E293B;
+    /* Crisp Charcoal Dark Text */
+    --text-muted: #64748B;
+    /* Muted Slate Text */
+    --border: #1E293B;
+    /* Thick Dark Outline Stroke */
+
+    /* Colors from Screenshot */
+    --cta: #22C55E;
+    /* Vibrant Emerald Green ("Start Free", "Continue Learning") */
+    --cta-hover: #16A34A;
+    --secondary: #A5F3FC;
+    /* Soft Sky Blue ("Browse Courses") */
+    --accent-mint: #A7F3D0;
+    /* Mint Green Eyebrow Pill ("• New: AI-Powered Learning") */
+    --accent-pink: #FFB7B2;
+    /* Soft Pink/Peach Badge (Target icon badge) */
+    --accent-yellow: #FEF08A;
+    /* Soft Yellow Star Badge */
+    --accent-purple: #E9D5FF;
+    /* Soft Lavender Books Badge */
+    --primary: #FEF08A;
+    /* Warm Yellow Highlight */
+  }
+
+  .dark {
+    /* Dark Mode Match */
+    --bg-cream: #0F172A;
+    --bg-card: #1E293B;
+    --text: #F8FAFC;
+    --text-muted: #94A3B8;
+    --border: #334155;
+
+    --cta: #10B981;
+    --cta-hover: #059669;
+    --secondary: #0284C7;
+    --accent-mint: #047857;
+    --accent-pink: #BE123C;
+    --accent-yellow: #B45309;
+    --accent-purple: #6D28D9;
+    --primary: #EAB308;
+  }
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-cream);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-heading {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+}
+
+/* Neo-Brutalist 3px Outline & Hard 3D Shadows */
+.border-3 {
+  border-width: 3px;
+}
+
+.clay-card {
+  background-color: var(--bg-card);
+  border: 3px solid var(--border);
+  border-radius: 1.75rem;
+  box-shadow: 4px 4px 0px 0px var(--border);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.clay-card-hover {
+  cursor: pointer;
+}
+
+.clay-card-hover:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px var(--border);
+}
+
+.clay-card-hover:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px var(--border);
+}
+
+/* Buttons matching the image */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--cta);
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: 1.25rem;
+  border: 3px solid var(--border);
+  box-shadow: 4px 4px 0px 0px var(--border);
+  transition: all 0.15s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+.btn-primary:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px var(--border);
+}
+
+.btn-primary:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px var(--border);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--secondary);
+  color: var(--text);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: 1.25rem;
+  border: 3px solid var(--border);
+  box-shadow: 4px 4px 0px 0px var(--border);
+  transition: all 0.15s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+.btn-secondary:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px var(--border);
+}
+
+.btn-secondary:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px var(--border);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--cta);
+  border: 2px solid var(--border);
+  border-radius: 9999px;
+}
+
+/* React Calendar Styling */
+.react-calendar {
+  width: 100% !important;
+  background: transparent !important;
+  border: none !important;
+  font-family: var(--font-body) !important;
+}
+
+.react-calendar__navigation {
+  display: flex !important;
+  margin-bottom: 1rem !important;
+}
+
+.react-calendar__navigation button {
+  min-width: 44px !important;
+  background: var(--bg-card) !important;
+  border: 2px solid var(--border) !important;
+  box-shadow: 2px 2px 0px 0px var(--border) !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  color: var(--text) !important;
+  border-radius: 12px !important;
+  transition: all 0.15s ease !important;
+}
+
+.react-calendar__navigation button:hover {
+  background: var(--secondary) !important;
+  transform: translate(-1px, -1px) !important;
+}
+
+.react-calendar__month-view__weekdays {
+  text-align: center !important;
+  text-transform: uppercase !important;
+  font-size: 0.75rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.05em !important;
+  color: var(--text-muted) !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.react-calendar__month-view__weekdays__weekday abbr {
+  text-decoration: none !important;
+}
+
+.react-calendar__tile {
+  max-width: 100% !important;
+  padding: 0.85em 0.5em !important;
+  background: none !important;
+  text-align: center !important;
+  line-height: 1.2 !important;
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+  color: var(--text) !important;
+  border-radius: 14px !important;
+  border: 2px solid transparent !important;
+  transition: all 0.15s ease !important;
+}
+
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+  background: var(--secondary) !important;
+  border-color: var(--border) !important;
+  box-shadow: 2px 2px 0px 0px var(--border) !important;
+}
+
+.react-calendar__tile--now {
+  background: var(--accent-mint) !important;
+  border-color: var(--border) !important;
+  box-shadow: 2px 2px 0px 0px var(--border) !important;
+  font-weight: 800 !important;
+}
+
+.react-calendar__tile--active {
+  background: var(--cta) !important;
+  color: #FFFFFF !important;
+  border-color: var(--border) !important;
+  box-shadow: 3px 3px 0px 0px var(--border) !important;
+}
+
+/* ========================================
+/* Read-only view overrides */
+.journal-readonly .ql-toolbar.ql-snow {
+  display: none !important;
+}
+
+.journal-readonly .ql-container.ql-snow {
+  border: none !important;
+  font-family: inherit !important;
+}
+
+.journal-readonly .ql-editor {
+  padding: 0 !important;
+  min-height: 100px !important;
+  font-size: 1rem !important;
+  color: var(--text) !important;
+}
+
+.journal-quill-editor .quill {
+  border: none !important;
+}
+
+/* Toolbar container */
+.journal-quill-editor .ql-toolbar.ql-snow {
+  background-color: var(--bg-cream) !important;
+  border: 2px solid var(--border) !important;
+  border-radius: 1.15rem 1.15rem 0 0 !important;
+  padding: 6px 10px !important;
+  font-family: var(--font-body) !important;
+}
+
+/* Toolbar buttons */
+.journal-quill-editor .ql-toolbar.ql-snow .ql-formats button {
+  background: var(--bg-card) !important;
+  border: 2px solid var(--border) !important;
+  border-radius: 0.65rem !important;
+  box-shadow: 1.5px 1.5px 0px 0px var(--border) !important;
+  width: 34px !important;
+  height: 32px !important;
+  padding: 4px !important;
+  margin: 2px 3px !important;
+  transition: all 0.15s ease !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.journal-quill-editor .ql-toolbar.ql-snow .ql-formats button:hover {
+  background: var(--primary) !important;
+  transform: translate(-1px, -1px) !important;
+  box-shadow: 2.5px 2.5px 0px 0px var(--border) !important;
+}
+
+.journal-quill-editor .ql-toolbar.ql-snow .ql-formats button:active {
+  transform: translate(1px, 1px) !important;
+  box-shadow: 0.5px 0.5px 0px 0px var(--border) !important;
+}
+
+.journal-quill-editor .ql-toolbar.ql-snow .ql-formats button.ql-active {
+  background: var(--secondary) !important;
+  box-shadow: 1px 1px 0px 0px var(--border) !important;
+}
+
+/* Toolbar SVG icons */
+.journal-quill-editor .ql-toolbar.ql-snow .ql-formats button svg,
+.journal-quill-editor .ql-toolbar.ql-snow .ql-picker .ql-picker-label svg {
+  width: 18px !important;
+  height: 18px !important;
+  max-width: 18px !important;
+  max-height: 18px !important;
+  float: none !important;
+}
+
+.journal-quill-editor .ql-toolbar.ql-snow .ql-formats button svg .ql-stroke,
+.journal-quill-editor .ql-toolbar.ql-snow .ql-picker .ql-picker-label svg .ql-stroke {
+  stroke: var(--text) !important;
+}
+
+.journal-quill-editor .ql-toolbar.ql-snow .ql-formats button svg .ql-fill,
+.journal-quill-editor .ql-toolbar.ql-snow .ql-picker .ql-picker-label svg .ql-fill {
+  fill: var(--text) !important;
+}
+
+/* Toolbar dropdowns (Header, Font, Color, Align, etc.) */
+.journal-quill-editor .ql-toolbar.ql-snow .ql-formats .ql-picker {
+  background: var(--bg-card) !important;
+  border: 2px solid var(--border) !important;
+  border-radius: 0.65rem !important;
+  box-shadow: 1.5px 1.5px 0px 0px var(--border) !important;
+  margin: 2px 3px !important;
+  font-weight: 700 !important;
+  font-size: 0.75rem !important;
+  color: var(--text) !important;
+  height: 32px !important;
+  line-height: 26px !important;
+  transition: all 0.15s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+.journal-quill-editor .ql-toolbar.ql-snow .ql-formats .ql-picker.ql-icon-picker,
+.journal-quill-editor .ql-toolbar.ql-snow .ql-formats .ql-picker.ql-color-picker {
+  width: 34px !important;
+}
+
+.journal-quill-editor .ql-toolbar.ql-snow .ql-formats .ql-picker:hover {
+  background: var(--primary) !important;
+}
+
+.journal-quill-editor .ql-toolbar.ql-snow .ql-picker .ql-picker-label {
+  color: var(--text) !important;
+  border: none !important;
+  padding: 2px 6px !important;
+  font-weight: 700 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.journal-quill-editor .ql-toolbar.ql-snow .ql-picker .ql-picker-label svg .ql-stroke {
+  stroke: var(--text) !important;
+}
+
+/* Dropdown menus */
+.journal-quill-editor .ql-toolbar.ql-snow .ql-picker .ql-picker-options {
+  background: var(--bg-card) !important;
+  border: 2px solid var(--border) !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 3px 3px 0px 0px var(--border) !important;
+  padding: 4px !important;
+  z-index: 100 !important;
+}
+
+.journal-quill-editor .ql-toolbar.ql-snow .ql-picker .ql-picker-options .ql-picker-item {
+  color: var(--text) !important;
+  padding: 4px 8px !important;
+  border-radius: 0.5rem !important;
+  font-weight: 600 !important;
+}
+
+.journal-quill-editor .ql-toolbar.ql-snow .ql-picker .ql-picker-options .ql-picker-item:hover {
+  background: var(--primary) !important;
+}
+
+/* Editor container */
+.journal-quill-editor .ql-container.ql-snow {
+  border: 2px solid var(--border) !important;
+  border-top: none !important;
+  border-radius: 0 0 1.15rem 1.15rem !important;
+  background-color: var(--bg-card) !important;
+  font-family: var(--font-body) !important;
+  font-size: 1rem !important;
+  color: var(--text) !important;
+}
+
+/* Editor writing area */
+.journal-quill-editor .ql-editor {
+  min-height: 350px !important;
+  padding: 1.25rem !important;
+  line-height: 1.75 !important;
+  color: var(--text) !important;
+  font-family: var(--font-body) !important;
+  font-size: 1rem !important;
+}
+
+.journal-quill-editor .ql-editor.ql-blank::before {
+  color: #94a3b8 !important;
+  font-style: italic !important;
+  font-family: var(--font-body) !important;
+}
+
+/* Headings inside editor */
+.journal-quill-editor .ql-editor h1,
+.journal-quill-editor .ql-editor h2,
+.journal-quill-editor .ql-editor h3 {
+  font-family: var(--font-heading) !important;
+  color: var(--text) !important;
+  font-weight: 800 !important;
+}
+
+/* Blockquote inside editor */
+.journal-quill-editor .ql-editor blockquote {
+  border-left: 4px solid var(--cta) !important;
+  color: var(--text-muted) !important;
+  background: var(--bg-cream) !important;
+  padding: 0.75rem 1rem !important;
+  border-radius: 0 0.75rem 0.75rem 0 !important;
+  margin: 0.5rem 0 !important;
+}
+
+/* Code block inside editor */
+.journal-quill-editor .ql-editor pre.ql-syntax {
+  background: var(--bg-cream) !important;
+  border: 2px solid var(--border) !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 2px 2px 0px 0px var(--border) !important;
+  color: var(--text) !important;
+  padding: 1rem !important;
+  font-size: 0.875rem !important;
+}
+
+/* Links inside editor */
+.journal-quill-editor .ql-editor a {
+  color: var(--cta) !important;
+  text-decoration: underline !important;
+}
+
+/* Lists inside editor */
+.journal-quill-editor .ql-editor ol,
+.journal-quill-editor .ql-editor ul {
+  padding-left: 1.5rem !important;
+  color: var(--text) !important;
+}
+
+/* Quill tooltip (link editor popup) */
+.journal-quill-editor .ql-tooltip {
+  background: var(--bg-card) !important;
+  border: 2px solid var(--border) !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 3px 3px 0px 0px var(--border) !important;
+  color: var(--text) !important;
+  padding: 8px 12px !important;
+  z-index: 100 !important;
+}
+
+.journal-quill-editor .ql-tooltip input[type='text'] {
+  background: var(--bg-cream) !important;
+  border: 2px solid var(--border) !important;
+  border-radius: 0.5rem !important;
+  color: var(--text) !important;
+  padding: 4px 8px !important;
+  font-family: var(--font-body) !important;
+}
+
+.journal-quill-editor .ql-tooltip a.ql-action,
+.journal-quill-editor .ql-tooltip a.ql-remove {
+  color: var(--cta) !important;
+  font-weight: 700 !important;
+}
+
+/* Outer wrapper shadow */
+.journal-quill-editor {
+  border-radius: 1.25rem;
+  box-shadow: 3px 3px 0px 0px var(--border);
+  overflow: hidden;
+}
