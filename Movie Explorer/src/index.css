@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+/*
+ * Movie Explorer — Cinematic Theater Theme
+ * Design System: Modern Dark Cinema
+ * Primary: Deep indigo (#1E1B4B)
+ * Accent: Spotlight gold (#CA8A04)
+ * Background: Theater black (#0A0A1A)
+ * Typography: Playfair Display (headings) + Inter (body)
+ */
+
+@theme {
+  --color-cinema-black: #0A0A1A;
+  --color-cinema-dark: #0F0F23;
+  --color-cinema-panel: #141428;
+  --color-cinema-surface: #1A1A35;
+  --color-cinema-border: #252545;
+  --color-cinema-border-light: #2E2E55;
+  --color-cinema-muted: #3A3A65;
+  --color-gold-50: #FFFBEB;
+  --color-gold-100: #FEF3C7;
+  --color-gold-200: #FDE68A;
+  --color-gold-300: #FCD34D;
+  --color-gold-400: #FBBF24;
+  --color-gold-500: #CA8A04;
+  --color-gold-600: #A16207;
+  --color-gold-700: #854D0E;
+  --color-curtain: #8B1A1A;
+  --color-curtain-dark: #5C1010;
+  --color-curtain-light: #B22222;
+  --color-spotlight: #CA8A04;
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-cinema-black);
+    color: #E2E8F0;
+    font-family: var(--font-body);
+    min-height: 100vh;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: #CA8A0440;
+    color: #FEF3C7;
+  }
+}
+
+/* Custom scrollbar — dark cinema */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0A1A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #252545;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3A3A65;
+}
+
+/* Spotlight glow keyframes */
+@keyframes spotlight-pulse {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.25; }
+}
+
+@keyframes curtain-shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes float-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Utility classes */
+@layer utilities {
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .animate-float-up {
+    animation: float-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .text-gold-gradient {
+    background: linear-gradient(135deg, #FDE68A, #CA8A04, #FDE68A);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow-gold {
+    box-shadow: 0 0 20px rgba(202, 138, 4, 0.15), 0 0 60px rgba(202, 138, 4, 0.05);
+  }
+
+  .glow-gold-strong {
+    box-shadow: 0 0 30px rgba(202, 138, 4, 0.25), 0 0 80px rgba(202, 138, 4, 0.1);
+  }
+
+  .curtain-border-l {
+    border-left: 3px solid var(--color-curtain);
+  }
+
+  .curtain-border-r {
+    border-right: 3px solid var(--color-curtain);
+  }
+}
