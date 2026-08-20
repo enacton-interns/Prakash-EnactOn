@@ -1,0 +1,41 @@
+{
+  "name": "smart-cli",
+  "version": "1.0.0",
+  "description": "An interactive, modern CLI toolkit for text processing, jokes, and file compression.",
+  "keywords": [
+    "cli",
+    "toolkit",
+    "utility"
+  ],
+  "homepage": "https://github.com/prakash8264/smart-cli#readme",
+  "bugs": {
+    "url": "https://github.com/prakash8264/smart-cli/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prakash8264/smart-cli.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "bin": {
+    "smart-cli": "index.js"
+  },
+  "files": [
+    "index.js",
+    "src"
+  ],
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^7.3.2",
+    "axios": "^1.7.9",
+    "boxen": "^8.0.1",
+    "chalk": "^5.4.1",
+    "dotenv": "^16.4.7",
+    "ora": "^8.1.1"
+  },
+  "devDependencies": {}
+}

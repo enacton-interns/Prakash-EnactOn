@@ -1,0 +1,18 @@
+{
+  "name": "amazon-product-scraper",
+  "version": "1.0.0",
+  "description": "A beginner-friendly Amazon product scraper using Playwright",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node src/index.js \"https://www.amazon.com/s?k=laptop\" --limit 3 --headful"
+  },
+  "dependencies": {
+    "csv-writer": "^1.6.0",
+    "playwright": "^1.47.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "license": "MIT"
+}
